@@ -1,3 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
+from .models import *
 
-# Create your views here.
+# Render homepage
+def home(request):
+    return render(request, 'todolist_app/main.html')
