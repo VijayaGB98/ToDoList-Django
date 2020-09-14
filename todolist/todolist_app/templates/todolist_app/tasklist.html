@@ -1,0 +1,54 @@
+{% extends 'todolist_app/main.html' %}
+
+{% block content %}
+
+<div class="container">
+
+    <h3>Incomplete Tasks:</h3>
+    <hr>
+
+    {% if incomplete_tasks %}
+        <div class="container-fluid">
+            {% for task in incomplete_tasks %}
+                <div class="card">
+                    <div class="card-header">
+                        {{ task.priority }}
+                    </div>
+                    <div class="card-body">
+                        <h5>{{ task.task_name }}</h5>
+                    </div>
+                    <div class="card-body">
+                        <p>Task Created on: {{ task.date_created }}</p>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <p>You finished all your incomplete tasks! Pat yourself on the back! :)</p>
+    {% endif %}
+
+    <h3>Completed Tasks:</h3>
+    <hr>
+    {% if completed_tasks %}
+        <div class="container-fluid">
+            {% for task in completed_tasks %}
+            <div class="card">
+                <div class="card-header">
+                    {{ task.priority }}
+                </div>
+                <div class="card-body">
+                    <h5>{{ task.task_name }}</h5>
+                </div>
+                <div class="card-body">
+                    <p>Task Created on: {{ task.date_created }}</p>
+                </div>
+            </div>
+        {% endfor %}
+        </div>
+    {% else %}
+        <p>You don't have any completed tasks. It's never too late to start!</p>
+    {% endif %}
+
+</div>
+
+{% endblock %}
