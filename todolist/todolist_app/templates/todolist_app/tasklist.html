@@ -10,11 +10,16 @@
     {% if incomplete_tasks %}
         <div class="container-fluid">
             {% for task in incomplete_tasks %}
-                <div class="card">
-                    <div class="card-header">
+                <div class="card card-style shadow">
+                    <div class="card-header {% if task.priority == 'High' %} card-high {% elif task.priority == 'Normal' %} card-normal {% else %} card-low {% endif %}">
                         {{ task.priority }}
+                        <div class="buttons justify-content-between">
+                            <a href="" class="btn btn-small btn-success shadow">Completed Task</a>
+                            <a href="" class="btn btn-small btn-primary shadow">Update Task</a>
+                            <a href="" class="btn btn-small btn-danger shadow">Delete Task</a>
+                        </div>
                     </div>
-                    <div class="card-body">
+                    <div class="card-body justify-content-between">
                         <h5>{{ task.task_name }}</h5>
                     </div>
                     <div class="card-body">
@@ -32,7 +37,7 @@
     {% if completed_tasks %}
         <div class="container-fluid">
             {% for task in completed_tasks %}
-            <div class="card">
+            <div class="card card-style">
                 <div class="card-header">
                     {{ task.priority }}
                 </div>
@@ -40,7 +45,7 @@
                     <h5>{{ task.task_name }}</h5>
                 </div>
                 <div class="card-body">
-                    <p>Task Created on: {{ task.date_created }}</p>
+                    <p>Task Completed on: {{ task.date_created }}</p>
                 </div>
             </div>
         {% endfor %}
