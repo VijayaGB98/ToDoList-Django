@@ -1,0 +1,17 @@
+{% extends 'todolist_app/main.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <div class="form-group">
+        <form action="" method="POST" class='form-'>
+            {% csrf_token %}
+            {{ form }}
+            <input type="submit" value="Update Task" class="btn btn-sm btn-primary shadow" name="update">
+        </form>
+    </div>
+</div>
+
+
+{% endblock %}

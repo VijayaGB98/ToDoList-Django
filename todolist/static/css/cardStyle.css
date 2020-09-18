@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'Montserrat-Regular';
-    src: url('/static/font/Montserrat/Montserrat-Regular.ttf');
+    src: url('/static/fonts/Montserrat/Montserrat-Regular.ttf');
 }
 
 @font-face {
@@ -19,9 +19,8 @@
 
 .card-style .card-header {
     font-family: Montserrat-SemiBold;
-    font-size: medium;
+    font-size: Large;
     background-color: whitesmoke;
-    color: black;
 }
 
 .card-high {
@@ -36,6 +35,12 @@
     color: green;
 }
 
-.buttons {
-    float: right;
+.card-date {
+    font-family: Montserrat-Thin;
+    font-size: medium;
+}
+
+.card-text {
+    font-family:Montserrat-Regular;
+    font-size: medium;
 }
